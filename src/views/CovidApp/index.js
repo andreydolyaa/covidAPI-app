@@ -1,0 +1,1 @@
+export { CovidApp } from './CovidApp.jsx';

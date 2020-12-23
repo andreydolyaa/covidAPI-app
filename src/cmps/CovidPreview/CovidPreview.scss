@@ -1,0 +1,39 @@
+
+.covid-preview{
+    display:flex;
+    flex-direction: column;
+    border:1px solid rgb(218, 218, 218);
+    width:250px;
+    padding:1rem;
+    font-size:.8rem;
+    margin:10px;
+    border-radius: 3px;
+    a{
+        text-decoration: none;
+    }
+    p{
+        padding:3px;
+        color:rgb(59, 59, 59);
+    }
+    .flag{
+        display:flex;
+        align-items: center;
+        border-bottom:1px solid rgb(167, 167, 167);
+        p{
+            margin-left:10px;
+        }
+    }
+    .green{
+        color:rgb(2, 177, 2);
+    }
+    .red{
+        color:red;
+    }
+    .purple{
+        color:purple;
+    }
+    .country-name{
+        font-weight: bold;
+        color:rgb(46, 44, 44);
+    }
+}

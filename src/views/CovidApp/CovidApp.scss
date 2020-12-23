@@ -1,0 +1,26 @@
+
+*{
+    box-sizing: border-box;
+    padding:0;
+    margin:0;
+    font-family: Merry;
+}
+.App{
+    max-width:1400px;
+    margin:auto;
+}
+.covid-app{
+    border: 1px solid black;
+}
+
+
+.global-stats{
+    margin:1rem;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    color:rgb(73, 73, 73);
+    h3{
+        margin:10px;
+    }
+}

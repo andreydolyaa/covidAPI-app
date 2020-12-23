@@ -1,0 +1,1 @@
+export {CovidDetails} from './CovidDetails.jsx';
