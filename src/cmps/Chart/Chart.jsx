@@ -5,15 +5,15 @@ import './Chart.scss'
 export function Chart({ country, fullInfo }) {
 
     useEffect(() => {
-        console.log('full info', fullInfo);
+
     }, [])
 
     var dataCases = {
         labels: fullInfo.map(data => data.Date),
         datasets: [{
             label: `${country.Country}'s Progress from day one`,
-            backgroundColor: 'rgb(255, 99, 132)',
-            borderColor: 'rgb(255, 99, 132)',
+            backgroundColor: 'rgb(255, 191, 0)',
+            borderColor: 'rgb(0, 255, 191)',
             data: fullInfo.map(data => data.Confirmed)
         }]
     }
@@ -21,8 +21,8 @@ export function Chart({ country, fullInfo }) {
         labels: fullInfo.map(data => data.Date),
         datasets: [{
             label: `${country.Country}'s recovery progress from day one`,
-            backgroundColor: 'rgb(255, 99, 132)',
-            borderColor: 'rgb(255, 99, 132)',
+            backgroundColor: 'rgb(60, 179, 113)',
+            borderColor: 'rgb(0, 255, 191)',
             data: fullInfo.map(data => data.Recovered),
             responsive:true
         }]

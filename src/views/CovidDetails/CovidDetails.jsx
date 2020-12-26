@@ -18,7 +18,12 @@ export function CovidDetails(props) {
     useEffect(() => {
         dispatch(loadCountry(props.match.params.id));
         dispatch(getFullInfo(country.Country));
+        console.log('@@#@$@%@%',country);
     }, [])
+
+    useEffect(() => {
+        dispatch(loadCountry(props.match.params.id));
+    },[country])
 
 
     return (
