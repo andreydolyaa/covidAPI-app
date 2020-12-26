@@ -1,6 +1,7 @@
 const INITIAL_STATE = {
     covid: null,
-    country: null
+    country: '',
+    fullInfo:null
 }
 
 export function covidReducer(state = INITIAL_STATE, action) {
@@ -15,6 +16,11 @@ export function covidReducer(state = INITIAL_STATE, action) {
                 ...state,
                 country: action.country
             }
+            case 'FULL_INFO':
+                return{
+                    ...state,
+                    fullInfo:action.fullInfo
+                }
         default:
             return state;
     }

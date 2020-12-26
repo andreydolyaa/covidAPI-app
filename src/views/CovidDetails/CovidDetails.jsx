@@ -1,25 +1,30 @@
 
 
 import React, { useEffect } from 'react';
-import { loadCountry } from '../../store/actions/covidActions.js';
+import { loadCountry, getFullInfo } from '../../store/actions/covidActions.js';
 import { useDispatch, useSelector } from 'react-redux';
 import './CovidDetails.scss';
 import { Link } from 'react-router-dom';
+import { Chart } from './../../cmps/Chart/Chart';
+
 
 export function CovidDetails(props) {
 
-    const dispatch = useDispatch();
     const country = useSelector(state => state.covidReducer.country);
+    const fullInfo = useSelector(state => state.covidReducer.fullInfo);
+    const dispatch = useDispatch();
 
 
     useEffect(() => {
         dispatch(loadCountry(props.match.params.id));
+        dispatch(getFullInfo(country.Country));
     }, [])
 
 
     return (
         <div>
-            {country &&
+            <Link to="/"><button>Back to main page</button></Link>
+            {country && fullInfo &&
                 <div className="covid-details">
                     <div className="flag">
                         <img src={country.img} />
@@ -33,9 +38,13 @@ export function CovidDetails(props) {
                         <p>Recoverd Today: <span className="green">{country.NewRecovered}</span></p>
                         <p>Total Recovered: <span className="green">{country.TotalRecovered}</span></p>
                     </div>
+                    {fullInfo && country &&
+                        <div className="details-chart">
+                            <Chart country={country} fullInfo={fullInfo} />
+                        </div>
+                    }
                 </div>
             }
-            <Link to="/"><button>Back to main page</button></Link>
         </div>
     )
 }

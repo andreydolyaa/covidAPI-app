@@ -9,9 +9,16 @@ export function loadCovid(filterBy) {
     }
 }
 
-export function loadCountry(code){
+export function loadCountry(code) {
     return async dispatch => {
         const country = await covidService.getCountryByCode(code);
-        dispatch({type:'GET_COUNTRY',country})
+        dispatch({ type: 'GET_COUNTRY', country })
+    }
+}
+
+export function getFullInfo(countryName) {
+    return async dispatch => {
+        const fullInfo = await covidService.fullInfoByCountry(countryName);
+        dispatch({ type: 'FULL_INFO', fullInfo });
     }
 }
